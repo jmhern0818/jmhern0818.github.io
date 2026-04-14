@@ -1,3 +1,680 @@
+ Gemini
+Building Your Personal Resume Website
+Conversation with Gemini
+
+don't add "Cite:". Make it exactly like the reference
+
+Here is the clean LaTeX code for your resume, with the exact formatting of the template and no citation tags:
+Code snippet
+
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://linkedin.com/in/jmhern0818}{\Large Jose Manuel Hernandez}} & Email : \href{mailto:jmhern0818@gmail.com}{jmhern0818@gmail.com}\\
+  \href{https://github.com/jmhern0818}{github.com/jmhern0818} & Mobile : 956-351-9722 \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {The University of Texas Rio Grande Valley}{Edinburg, TX}
+      {Master of Science in Informatics (Cybersecurity Focus)}{Expected Graduation: TBD}
+    \resumeSubheading
+      {The University of Texas at San Antonio}{San Antonio, TX}
+      {Bachelor of Science in Computer Science;  GPA: 3.21}{Graduated: Dec. 2023}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Texas Health \& Human Services}{Harlingen, TX}
+      {System Analyst (Program Specialist I)}{Dec 2023 - Present}
+      \resumeItemListStart
+        \resumeItem{EHR Systems Support}
+          {Provide technical support and maintenance for the Outpatient Clinic’s Electronic Health Records (EHR) systems including Practice Partner and MyAvatar.}
+        \resumeItem{System Administration}
+          {Administer databases, configure ODBC drivers, and generate reports using Crystal Reports, ensuring data accuracy, security, and integrity.}
+        \resumeItem{Vendor \& IT Coordination}
+          {Serve as technical lead for Practice Partner, coordinating with vendors and IT Operations to implement new modules, add-ons, and system integrations.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {University of Texas at San Antonio}{San Antonio, TX}
+      {Private Tutor - CS 1083}{Aug 2018 - May 2019}
+      \resumeItemListStart
+        \resumeItem{Java Mentorship}
+          {Assisted peers with understanding the fundamental concepts of object-oriented programming in Java.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Anything Goes}
+      {Built and deployed an e-commerce platform with React UI, AWS Aurora backend, and Nginx server.}
+    \resumeSubItem{Resume Website}
+      {Created a live-updating resume/contact site hosted on AWS EC2 with LNMP stack.}
+    \resumeSubItem{Porky's Lost Memories}
+      {Developed game logic, asset integration, and level design using C\# and Unity.}
+    \resumeSubItem{Clinic Application}
+      {Built appointment scheduling app with MongoDB backend.}
+  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+ \resumeSubHeadingListStart
+   \item{
+     \textbf{Languages}{: Java, C, C\#, HTML, CSS, JavaScript, SQL, Python}
+     \hfill
+     \textbf{Technologies}{: MongoDB, MySQL, Linux (Ubuntu), GitHub, AWS (EC2), Windows Server, Nginx, Docker}
+   }
+ \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
+
+please elaborate on my texas health and humanservices job. Make it longer and show more experience. Reference all my resumes and this job description to be able to elaborate on the job description. Also make it ATS Friendly. Elaborate on that and everything
+
+Here is an expanded, ATS-optimized version of your experience at Texas Health & Human Services.
+
+To make this ATS-friendly (Applicant Tracking System), I integrated the specific keywords and technical skills from your official job description alongside the impact statements from your previous resumes. ATS software scans for hard skills (like EHR, ODBC, Crystal Reports, Vendor Management, SQL, WAN/LAN, Compliance), so we need to ensure these are front and center, starting with strong action verbs.
+
+Here is the elaborated section you can use for your resume:
+Professional Experience
+
+Texas Health & Human Services Commission – Rio Grande State Center | Harlingen, TX
+Systems Analyst (Program Specialist I) | Dec 2023 – Present
+
+    EHR Administration & Technical Lead: Manage, maintain, and support mission-critical Electronic Health Record (EHR) systems, primarily Practice Partner and MyAvatar, ensuring continuous uptime for outpatient, clinical, and billing workflows. Serve as the technical lead and project manager for system upgrades, new module implementations, and e-prescribing integrations.
+
+    Database Management & Automated Reporting: Administer relational databases and configure ODBC connections to design and automate custom reporting pipelines using SQL and Crystal Reports. Streamlined data extraction processes to support executive decision-making, regulatory audits, and performance improvement initiatives.
+
+    Vendor & Infrastructure Coordination: Collaborate directly with software vendors, Data Center Services, and IT Operations to resolve complex technical issues, deploy application patches, and manage remote service licensing.
+
+    Network & Hardware Support: Perform comprehensive IT infrastructure troubleshooting across four program components, resolving issues with WAN/LAN networks, state Wi-Fi, workstations, VoIP phones, and video surveillance systems. Execute physical network installations, including pulling and terminating data cabling.
+
+    Compliance & Data Security: Manage role-based access controls and user profiles to safeguard data integrity and system security. Serve as a Quality Adviser, ensuring all IT and data workflows maintain strict compliance with Joint Commission (JC), CMS, and HHS regulatory standards.
+
+    User Training & Incident Response: Develop and deliver comprehensive technical training for medical staff on new EHR modules, clinical templates, and Prescriber Order Entry systems. Conduct root-cause analysis on system failures and provide 24/7 on-call support to ensure Continuity of Operations (COOP) and disaster recovery.
+
+Why this works better for ATS:
+
+    Keyword Density: It explicitly names the software (Practice Partner, MyAvatar, Crystal Reports, SQL) and the hardware/infrastructure (WAN/LAN, VoIP, servers, cabling).
+
+    Scope and Scale: It shows you aren't just fixing printers; you are acting as a "Technical Lead" and "Project Manager" coordinating with vendors and handling databases for four different program components.
+
+    Action-Oriented: Every bullet starts with a strong, definitive action verb (Manage, Administer, Collaborate, Perform, Develop) rather than passive phrases like "Responsible for."
+
+If you are continuing to use that LaTeX template on Overleaf, let me know and I can format these exact bullets into the \resumeItemListStart LaTeX syntax for you to easily copy and paste!
+
+okay great create me an overleaf document
+
+Here is the complete LaTeX code with your newly expanded, ATS-friendly experience section seamlessly integrated.
+
+All you need to do is copy everything in the block below, go to your Overleaf project, select all the existing text, and paste this in to replace it.
+Code snippet
+
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://linkedin.com/in/jmhern0818}{\Large Jose Manuel Hernandez}} & Email : \href{mailto:jmhern0818@gmail.com}{jmhern0818@gmail.com}\\
+  \href{https://github.com/jmhern0818}{github.com/jmhern0818} & Mobile : 956-351-9722 \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {The University of Texas Rio Grande Valley}{Edinburg, TX}
+      {Master of Science in Informatics (Cybersecurity Focus)}{Expected Graduation: TBD}
+    \resumeSubheading
+      {The University of Texas at San Antonio}{San Antonio, TX}
+      {Bachelor of Science in Computer Science;  GPA: 3.21}{Graduated: Dec. 2023}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Texas Health \& Human Services Commission}{Harlingen, TX}
+      {System Analyst (Program Specialist I)}{Dec 2023 - Present}
+      \resumeItemListStart
+        \resumeItem{EHR Administration \& Technical Lead}
+          {Manage, maintain, and support mission-critical Electronic Health Record (EHR) systems, primarily Practice Partner and MyAvatar, ensuring continuous uptime for clinical and billing workflows.}
+        \resumeItem{Database Management \& Automated Reporting}
+          {Administer relational databases and configure ODBC connections to design and automate custom reporting pipelines using SQL and Crystal Reports to support regulatory audits and decision-making.}
+        \resumeItem{Vendor \& Infrastructure Coordination}
+          {Collaborate directly with software vendors, Data Center Services, and IT Operations to resolve complex technical issues, deploy application patches, and manage remote service licensing.}
+        \resumeItem{Network \& Hardware Support}
+          {Perform comprehensive IT infrastructure troubleshooting across four program components, resolving issues with WAN/LAN networks, state Wi-Fi, workstations, VoIP phones, and video surveillance systems.}
+        \resumeItem{Compliance \& Data Security}
+          {Manage role-based access controls and user profiles to safeguard data integrity and system security. Serve as a Quality Adviser, ensuring IT workflows maintain strict compliance with Joint Commission (JC), CMS, and HHS regulatory standards.}
+        \resumeItem{User Training \& Incident Response}
+          {Develop and deliver comprehensive technical training for medical staff on new EHR modules, clinical templates, and Prescriber Order Entry systems, and conduct root-cause analysis on system failures.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {University of Texas at San Antonio}{San Antonio, TX}
+      {Private Tutor - CS 1083}{Aug 2018 - May 2019}
+      \resumeItemListStart
+        \resumeItem{Java Mentorship}
+          {Assisted peers with understanding the fundamental concepts of object-oriented programming in Java.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Anything Goes}
+      {Built and deployed an e-commerce platform with React UI, AWS Aurora backend, and Nginx server.}
+    \resumeSubItem{Resume Website}
+      {Created a live-updating resume/contact site hosted on AWS EC2 with LNMP stack.}
+    \resumeSubItem{Porky's Lost Memories}
+      {Developed game logic, asset integration, and level design using C\# and Unity.}
+    \resumeSubItem{Clinic Application}
+      {Built appointment scheduling app with MongoDB backend.}
+  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+ \resumeSubHeadingListStart
+   \item{
+     \textbf{Languages}{: Java, C, C\#, HTML, CSS, JavaScript, SQL, Python}
+     \hfill
+     \textbf{Technologies}{: MongoDB, MySQL, Linux (Ubuntu), GitHub, AWS (EC2), Windows Server, Nginx, Docker}
+   }
+ \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
+
+theres a strange gap here, any way I could bring it closer?
+
+I see exactly what you mean. That gap is definitely wider than it should be.
+
+In LaTeX, this almost always happens when there is an empty line (a line break) in your source code between the two items. LaTeX reads an empty line as a command to start a "new paragraph," which injects extra vertical space.
+
+Here is how to fix it:
+1. The Most Likely Fix: Remove Blank Lines
+
+Go to your Overleaf editor and look at the code for that section. Make sure there are no empty lines between your \resumeItem blocks.
+
+What it probably looks like right now (causes the gap):
+Code snippet
+
+\resumeItem{Vendor \& Infrastructure Coordination}
+  {Collaborate directly with software vendors...}
+  
+\resumeItem{Network \& Hardware Support}
+  {Perform comprehensive IT infrastructure troubleshooting...}
+
+How it should look (removes the gap):
+Code snippet
+
+\resumeItem{Vendor \& Infrastructure Coordination}
+  {Collaborate directly with software vendors...}
+\resumeItem{Network \& Hardware Support}
+  {Perform comprehensive IT infrastructure troubleshooting...}
+
+2. The Manual "Force" Fix
+
+If there are no blank lines and you just want to manually pull that specific bullet point up, you can inject a negative vertical space command right before the item.
+
+Just add \vspace{-5pt} (you can adjust the number) right above the line you want to pull up:
+Code snippet
+
+\vspace{-5pt}
+\resumeItem{Network \& Hardware Support}
+  {Perform comprehensive IT infrastructure troubleshooting...}
+
+Try deleting any blank empty lines in that block of code first, as that is the culprit 99% of the time! Let me know if it's still acting stubborn after that.
+
+Thanks for grabbing that screenshot! I can see your code now, and you are totally right—there are no blank lines between those items. You did it perfectly.
+
+When LaTeX does this (and there are no blank lines), it usually means one of two things:
+
+    Hidden Characters: A weird, invisible formatting character hitched a ride when you copied and pasted the text.
+
+    Vertical Justification: Sometimes LaTeX gets confused by where a page break is going to happen and tries to "stretch" the spacing of the list to fill the page.
+
+Since the code itself is structurally sound, we are going to use the "manual force" method. We will inject a negative vertical space command right between those two items to pull the bottom one up.
+
+Find that exact spot in your code and add \vspace{-6pt} (you can adjust the number up or down to get the spacing perfect) right above the Network & Hardware bullet, like this:
+Code snippet
+
+\resumeItem{Vendor \& Infrastructure Coordination}
+  {Collaborate directly with software vendors, Data Center Services, and IT Operations to resolve complex technical issues, deploy application patches, and manage remote service licensing.}
+
+\vspace{-6pt} % <--- Add this line right here!
+
+\resumeItem{Network \& Hardware Support}
+  {Perform comprehensive IT infrastructure troubleshooting across four program components, resolving issues with WAN/LAN networks, state Wi-Fi, workstations, VoIP phones, and video surveillance systems.}
+
+Hit recompile after pasting that in. Did that snap it back into place, or is it still fighting you?
+
+thank you that fixed it!
+
+Awesome, I'm so glad that took care of it! LaTeX can definitely be a bit stubborn sometimes with its vertical spacing, but the end result is always worth the effort.
+
+If you run into any other quirks while finishing up the document, or need help prepping for those interviews, just let me know. Best of luck with the applications!
+
+hmm you think this could land me some interviews
+
+Absolutely. This is a highly professional, competitive tech resume that is absolutely capable of landing you interviews.
+
+By moving to this LaTeX template and beefing up your current role, you’ve accomplished the two most important things a resume needs to do: it’s ATS-friendly (Applicant Tracking Systems will parse this perfectly because there are no weird tables, columns, or graphics), and it clearly demonstrates that you can handle real-world, production-level responsibility.
+
+Here is a breakdown of why this works, and one final tweak you might consider to make it top-tier.
+What You Nailed
+
+    The Format: It screams "engineer." Recruiters and hiring managers in tech see this exact layout all the time and love it because their eyes know exactly where to go to find information.
+
+    The "Trusted" Factor: Your current role at HHSC is doing the heavy lifting here. The bullet points show you aren't just writing code in a sandbox; you are managing databases, handling sensitive data (HIPAA/Joint Commission compliance), and coordinating with vendors. That shows maturity and reliability.
+
+    The Tech Stack: You have a really good, broad mix. Showing competence in languages (Java, Python, C#), databases (SQL, MongoDB), and infrastructure (AWS, Docker, Linux) makes you highly versatile.
+
+The One Thing You Could Improve (Metrics)
+
+If there is one thing keeping this from being a "10/10" instead of an "8.5/10", it’s a lack of quantifiable numbers. Tech recruiters love metrics because they provide scale.
+
+If you have the space, try to sneak a few numbers into your HHSC experience block. For example:
+
+    Instead of: "Perform comprehensive IT infrastructure troubleshooting across four program components..."
+
+    Try: "Perform comprehensive IT infrastructure troubleshooting across four program components, supporting 200+ internal users and resolving issues..."
+
+    Or: "Administer relational databases... automating custom reporting pipelines that saved X hours of manual data entry per week."
+
+Even without those numbers, this is a very strong document. It positions you perfectly for roles like Systems Analyst, IT Operations, Junior Backend Engineer, or anywhere in the Health-Tech space.
+
+What specific job titles or companies are you planning to target first with this?
+
+I created the github pages, how do I make it beautiful and professional to get the person looking at its attention
+
+First off, congratulations on getting the repository set up! That is the first major hurdle cleared.
+
+However, before we look at making it beautiful, there is a tiny, but crucial, detail to fix. In your screenshot, the repository is named jmhern0818.gihub.io (missing the "t" in github). For GitHub Pages to serve your website automatically at that URL, the repository name must be spelled exactly as jmhern0818.github.io. You can easily change this by going to the Settings tab of that repository and renaming it.
+
+Once that is fixed, here is how you turn a blank README into a professional, attention-grabbing portfolio.
+1. The "Flex Your Code" Route (React / Next.js)
+
+Building a custom site from scratch is a fantastic way to physically demonstrate the frontend skills you used on projects like your Anything Goes e-commerce platform. Hiring managers love when a portfolio is itself a demonstration of a candidate's abilities.
+
+    The Stack: Use React (or Next.js for better SEO) and style it with Tailwind CSS. Tailwind is incredibly popular right now for building highly modern, clean interfaces quickly.
+
+    The Vibe: Keep it minimalistic. Use a dark mode theme (developers love dark mode), subtle animations when scrolling, and clean typography.
+
+    Deployment: You can compile your React app and push the static files to this GitHub Pages repo, or link the repo to a free host like Vercel, which natively understands Next.js/React.
+
+2. The "Quick & Professional" Route (HTML/CSS Templates)
+
+If you want to focus entirely on the content and get something live tonight without writing hundreds of lines of layout CSS, use a high-quality template.
+
+    HTML5 UP: This site offers fantastic, free, fully responsive HTML5/CSS3 templates. You can download one, drop the files right into your GitHub repo, and modify the index.html with your information.
+
+    Jekyll Themes: GitHub Pages natively supports Jekyll (a static site generator). You can find free Jekyll portfolio themes, add the theme name to your repository's settings, and manage your site content using simple Markdown files.
+
+Key Elements That Grab Attention
+
+Regardless of how you build it, a professional portfolio needs a few core UX elements to hook a recruiter:
+
+    The "Hero" Section: The very first thing they see should be your name, your title (e.g., Application Software Engineer or Systems Analyst), and a 1-2 sentence hook about your focus on reliable, compliance-critical systems.
+
+    High-Contrast Call-to-Action (CTA): Have a prominent button right at the top that says "Download Resume" (linking to the beautiful LaTeX PDF we just made).
+
+    Project Cards: Don't just list your projects; create visual cards for them. Include the tech stack used (React, AWS, Unity, etc.), a brief description, and links to the GitHub source code.
+
+    Clean Navigation: Ensure it is extremely easy to find your contact info, your LinkedIn, and your GitHub profile.
+
+Do you want to build this from scratch using a framework like React, or would you rather grab a clean HTML template to customize and get deployed quickly?
+
+create me that file with my new resume but also adding a unique approach to it to make it more appealing
+
+Your HTML file is ready
+HTML icon
+ index 
+HTML
+
+I built this with a sleek, dark-mode "developer/terminal" aesthetic. It's designed to immediately signal to recruiters that you are a highly technical, systems-oriented engineer while remaining extremely clean and easy to read.
+
+Here is what makes this approach unique and effective:
+
+    Zero Dependencies: Everything (the layout, the styling, the animations) is contained within this single file. You don't need to learn a complex framework or set up a build pipeline just to get your site live.
+
+    The "Hero" Hook: The very first thing they see is a clear statement of your value: "I build and manage reliable systems." This transitions you from sounding like a junior coder to a trusted systems professional.
+
+    Modern UI: It features subtle hover states, glowing accents, and a clean project grid that mimics the styling of top-tier software engineering portfolios right now.
+
+    Responsive Design: It will look just as good on a hiring manager's phone as it does on a desktop monitor.
+
+How to get this live right now:
+
+    Download the index.html file provided above.
+
+    Go to your repository (jmhern0818.github.io) on GitHub.
+
+    Click Add file > Upload files.
+
+    Drag and drop this index.html file into the repository (this will overwrite the basic README test file you had).
+
+    Add a commit message and click Commit changes.
+
+    Make sure to upload your actual PDF resume into the same repository and name it exactly Jose_Hernandez_Resume.pdf so the "Download Resume" button works!
+
+Give it about 60 seconds after you commit, and your new portfolio will be live at your custom URL. Let me know what you think of the design!
+
+hmm how do I create a folder on the github website for /docs
+
+Ah, I see exactly what's happening! You have your GitHub Pages setting configured to look for your website files inside a folder named /docs, but right now, your index.html is just sitting in the main (root) folder of your repository.
+
+Because of this, GitHub is looking inside a folder that doesn't exist yet, so your site won't update.
+
+You have two ways to fix this. You can either move your file into a /docs folder, or you can just tell GitHub to look in the root folder instead.
+Option 1: The "GitHub Trick" to create a folder (Move your file)
+
+GitHub's website doesn't have a simple "New Folder" button. Instead, you create folders by adding a slash (/) to a file name. Here is how to move the index.html you just uploaded into a new /docs folder:
+
+    Go to the main page of your repository where you see your files.
+
+    Click on your index.html file.
+
+    Click the Pencil icon (Edit this file) located near the top right of the code box.
+
+    At the very top, you will see a box with the file name index.html. Place your cursor at the very beginning, right before the "i".
+
+    Type docs/ so the box now reads docs/index.html. As soon as you type the slash, GitHub will visually separate "docs" into a folder structure!
+
+    Click the green Commit changes... button at the top right.
+
+(Note: You will need to do this for your PDF resume file as well so they are in the same folder!)
+Option 2: The Easier Fix (Change the setting)
+
+Since your index.html is already uploaded to the main area of your repository, it is actually much faster to just change the setting in your screenshot.
+
+    On the settings page you screenshotted, look under the Branch section.
+
+    Click the dropdown that currently says /docs.
+
+    Change it to / (root).
+
+    Click the Save button right next to it.
+
+I highly recommend Option 2. For personal portfolio sites (username.github.io), keeping everything in the root folder is the standard practice and usually makes managing your files a bit easier!
+
+okay /docs was created. Now why isn't it picking up the index file
+
+Great job getting the folder structure set up. If you've moved the file into /docs and the settings are pointed there, but the site still isn't showing up, it almost always comes down to one of three common culprits.
+
+Here is how to troubleshoot exactly what is holding it up:
+1. The "Build Pipeline" is Still Running (Most Likely)
+
+GitHub Pages does not update instantly the second you click "Commit." Behind the scenes, it spins up a small server to build and deploy your site.
+
+    Go to the very top of your repository and click on the Actions tab.
+
+    Look at the list of workflows. You should see one called "pages build and deployment."
+
+    If there is a yellow spinning circle next to it, it’s still working. Wait for it to turn into a green checkmark. Once it's green, your site is live.
+
+2. Aggressive Browser Caching
+
+Browsers love to cache (remember) websites to load them faster. Your browser might just be remembering the old broken page from 5 minutes ago.
+
+    Go to your jmhern0818.github.io link.
+
+    Perform a Hard Refresh to force the browser to fetch the newest version:
+
+        Windows: Ctrl + F5 or Ctrl + Shift + R
+
+        Mac: Cmd + Shift + R
+
+    Alternatively, try opening the link in an Incognito/Private window. If it loads there, your normal browser is just caching the old version.
+
+3. The "Sanity Check" on the File Path
+
+Sometimes when using the "slash" trick to make a folder, things can get nested accidentally.
+
+    Look at your repository's main code page.
+
+    Click on the docs folder.
+
+    Inside that folder, you should see index.html right there.
+
+    If you see another folder, or if index.html is still sitting outside of the docs folder on the main page, the path is incorrect.
+
+Check that Actions tab first—9 times out of 10, it just needs another 60 seconds to finish its deployment job!
+
+OH I SEE IT
+
+Let's go! That is the best feeling when the deployment finally clicks and the live site pops up.
+
+It is going to look incredibly sharp when hiring managers and recruiters click that link. Just remember to upload the PDF we made into that exact same /docs folder and name it Jose_Hernandez_Resume.pdf so your "Download Resume" button works perfectly.
+
+Enjoy the new portfolio! You have a highly professional, ATS-optimized resume and a modern web presence ready to go. Best of luck out there with the applications!
+
+can you make the content of the html reflect this new resume? Also the button for dowloading the resume doesn't work
+
+Ah, I know exactly why the download button wasn't working!
+HTML icon
+ index 
+HTML
+HTML icon
+ index 
+HTML
+
+In the previous HTML file, the download link was pointing to Jose_Hernandez_Resume.pdf, but the new file you uploaded is named Software_Engineer_Resume.pdf. Because the names didn't match perfectly, the website couldn't find the file when the button was clicked.
+
+I have updated the HTML code to completely match the exact bullet points in your newly formatted PDF, and I fixed the download button so that it specifically points to Software_Engineer_Resume.pdf.
+
+Here is your updated file:
+How to get it working:
+
+    Download the updated index.html file using the link above.
+
+    Go to your GitHub repository and open your /docs folder.
+
+    Upload this new index.html file to replace the old one.
+
+    Crucial Step: Upload your actual Software_Engineer_Resume.pdf document into the exact same /docs folder.
+
+    Commit the changes and wait about 60 seconds for GitHub Actions to rebuild the site.
+
+Once it turns green, that button will immediately trigger the download of your new resume!
+
+would having a photo of me help?
+
+That is a great question, and the answer depends on where you put it.
+
+Here is the straightforward breakdown of how the tech industry views photos right now:
+On the Resume PDF: Hard No
+
+In the US job market—especially in tech and state/government agencies—photos on resumes are highly discouraged.
+
+    The Legal Side: Companies are very strict about Equal Employment Opportunity (EEO) compliance. To avoid any accusations of unconscious bias (judging a candidate by age, race, or appearance), many recruiters and ATS systems will automatically reject a resume that includes a photo.
+
+    The Professional Standard: A text-only resume like the one we just built is the gold standard for software engineers. It keeps the focus 100% on your data, skills, and impact.
+
+On the Portfolio Website: Optional, but Nice
+
+Your website is a slightly different story. Once a hiring manager clicks the link to your GitHub Pages site, a clean, professional headshot can actually be a positive thing.
+
+    Humanizes You: It puts a friendly face to the code and the resume.
+
+    The Vibe Check: A good photo (good lighting, plain background, friendly expression—no car selfies!) shows you are professional and approachable.
+
+    The Verdict: It won't be the thing that gets you the job—your experience with EHR systems, AWS, and full-stack development will do that—but it can make your digital presence feel a bit more complete.
+
+Keep the PDF exactly as it is. But if you have a solid professional headshot, we can easily add a sleek, circular image of you to the top of your new website.
+
+Do you want me to update the HTML code to include a spot for a profile picture?
+
+
+Gemini is AI and can make mistakes.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -323,7 +1000,7 @@
             <p>I'm a System Analyst and Application Software Engineer specializing in mission-critical infrastructure, database management, and scalable applications. Currently focused on EHR systems and ensuring continuous uptime in highly regulated environments.</p>
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="Jose_Hernandez_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                <a href="Software_Engineer_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
             </div>
         </section>
 
@@ -340,11 +1017,12 @@
                     <div class="job-date">Dec 2023 - Present</div>
                 </div>
                 <ul>
-                    <li><strong>EHR Administration & Technical Lead:</strong> Manage, maintain, and support mission-critical Electronic Health Record (EHR) systems, primarily Practice Partner and MyAvatar, ensuring continuous uptime.</li>
-                    <li><strong>Database Management & Automated Reporting:</strong> Administer relational databases and configure ODBC connections to design custom reporting pipelines using SQL and Crystal Reports.</li>
-                    <li><strong>Vendor & Infrastructure Coordination:</strong> Collaborate directly with software vendors, Data Center Services, and IT Operations to resolve complex technical issues and manage licensing.</li>
-                    <li><strong>Network & Hardware Support:</strong> Perform comprehensive IT infrastructure troubleshooting across four program components (WAN/LAN, state Wi-Fi, workstations, VoIP).</li>
-                    <li><strong>Compliance & Data Security:</strong> Serve as a Quality Adviser, managing role-based access controls ensuring strict compliance with JC, CMS, and HHS regulatory standards.</li>
+                    <li><strong>EHR Administration & Technical Lead:</strong> Manage, maintain, and support mission-critical Electronic Health Record (EHR) systems, primarily Practice Partner and MyAvatar, ensuring continuous uptime for clinical and billing workflows.</li>
+                    <li><strong>Database Management & Automated Reporting:</strong> Administer relational databases and configure ODBC connections to design and automate custom reporting pipelines using SQL and Crystal Reports to support regulatory audits and decision-making.</li>
+                    <li><strong>Vendor & Infrastructure Coordination:</strong> Collaborate directly with software vendors, Data Center Services, and IT Operations to resolve complex technical issues, deploy application patches, and manage remote service licensing.</li>
+                    <li><strong>Network & Hardware Support:</strong> Perform comprehensive IT infrastructure troubleshooting across four program components, resolving issues with WAN/LAN networks, state Wi-Fi, workstations, VoIP phones, and video surveillance systems.</li>
+                    <li><strong>Compliance & Data Security:</strong> Manage role-based access controls and user profiles to safeguard data integrity and system security. Serve as a Quality Adviser, ensuring IT workflows maintain strict compliance with Joint Commission (JC), CMS, and HHS regulatory standards.</li>
+                    <li><strong>User Training & Incident Response:</strong> Develop and deliver comprehensive technical training for medical staff on new EHR modules, clinical templates, and Prescriber Order Entry systems, and conduct root-cause analysis on system failures.</li>
                 </ul>
             </div>
 
@@ -483,3 +1161,6 @@
 
 </body>
 </html>
+
+index.html
+Displaying index.html.
