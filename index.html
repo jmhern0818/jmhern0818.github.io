@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Manuel Hernandez | Software Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --surface-color: #1e293b;
+            --primary-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Layout & Typography --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+            margin-left: 15px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-pre {
+            color: var(--primary-color);
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--text-muted);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--primary-color);
+            font-family: monospace;
+        }
+
+        .btn-primary {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* --- Social Links --- */
+        .social-links {
+            position: fixed;
+            left: 40px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .social-links::after {
+            content: "";
+            width: 1px;
+            height: 90px;
+            background-color: var(--text-muted);
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* --- Experience Section --- */
+        .job {
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .job:hover {
+            transform: translateX(10px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+
+        .job-company {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .job-date {
+            font-family: monospace;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .job ul {
+            list-style-type: none;
+        }
+
+        .job ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+
+        .job ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* --- Projects Grid --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: var(--surface-color);
+            padding: 25px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
+        }
+
+        .project-card:hover {
+            top: -5px;
+            box-shadow: 0 10px 30px -15px rgba(0,0,0,0.5);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .project-header i.fa-folder {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Skills Section --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .skill-group {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--surface-color);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .skill-group h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: rgba(255,255,255,0.05);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .social-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="social-links">
+        <a href="https://github.com/jmhern0818" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/jmhern0818" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:jmhern0818@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-pre">Hi, my name is</div>
+            <h1>Jose Hernandez.<br><span>I build and manage reliable systems.</span></h1>
+            <p>I'm a System Analyst and Application Software Engineer specializing in mission-critical infrastructure, database management, and scalable applications. Currently focused on EHR systems and ensuring continuous uptime in highly regulated environments.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="Jose_Hernandez_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">System Analyst (Program Specialist I)</div>
+                        <div class="job-company">Texas Health & Human Services Commission</div>
+                    </div>
+                    <div class="job-date">Dec 2023 - Present</div>
+                </div>
+                <ul>
+                    <li><strong>EHR Administration & Technical Lead:</strong> Manage, maintain, and support mission-critical Electronic Health Record (EHR) systems, primarily Practice Partner and MyAvatar, ensuring continuous uptime.</li>
+                    <li><strong>Database Management & Automated Reporting:</strong> Administer relational databases and configure ODBC connections to design custom reporting pipelines using SQL and Crystal Reports.</li>
+                    <li><strong>Vendor & Infrastructure Coordination:</strong> Collaborate directly with software vendors, Data Center Services, and IT Operations to resolve complex technical issues and manage licensing.</li>
+                    <li><strong>Network & Hardware Support:</strong> Perform comprehensive IT infrastructure troubleshooting across four program components (WAN/LAN, state Wi-Fi, workstations, VoIP).</li>
+                    <li><strong>Compliance & Data Security:</strong> Serve as a Quality Adviser, managing role-based access controls ensuring strict compliance with JC, CMS, and HHS regulatory standards.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Private Tutor - CS 1083</div>
+                        <div class="job-company">University of Texas at San Antonio</div>
+                    </div>
+                    <div class="job-date">Aug 2018 - May 2019</div>
+                </div>
+                <ul>
+                    <li><strong>Java Mentorship:</strong> Assisted peers with understanding the fundamental concepts of object-oriented programming in Java.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <h2><i class="fas fa-code-branch"></i> Technical Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="far fa-folder"></i>
+                    </div>
+                    <div class="project-title">Anything Goes</div>
+                    <div class="project-desc">Built and deployed a full-stack e-commerce platform featuring a modern frontend UI and a robust cloud-hosted database.</div>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>AWS Aurora</span>
+                        <span>Nginx</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="far fa-folder"></i>
+                    </div>
+                    <div class="project-title">Resume Website</div>
+                    <div class="project-desc">Created a live-updating resume and contact portfolio site hosted on Amazon Web Services.</div>
+                    <div class="project-tech">
+                        <span>AWS EC2</span>
+                        <span>LNMP Stack</span>
+                        <span>HTML/JS</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="far fa-folder"></i>
+                    </div>
+                    <div class="project-title">Porky's Lost Memories</div>
+                    <div class="project-desc">Developed core game logic, managed 3D asset integration, and designed interactive levels.</div>
+                    <div class="project-tech">
+                        <span>C#</span>
+                        <span>Unity</span>
+                        <span>Blender</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="far fa-folder"></i>
+                    </div>
+                    <div class="project-title">Clinic Application</div>
+                    <div class="project-desc">Engineered an appointment scheduling application with a NoSQL backend for patient management.</div>
+                    <div class="project-tech">
+                        <span>C#</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills & Education -->
+        <section id="skills" class="section">
+            <h2><i class="fas fa-terminal"></i> Skills & Education</h2>
+            
+            <div class="skills-container" style="margin-bottom: 40px;">
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">C</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Technologies & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS (EC2/Aurora)</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Linux (Ubuntu)</span>
+                        <span class="skill-tag">Nginx</span>
+                        <span class="skill-tag">MySQL / MongoDB</span>
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">GitHub</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header" style="margin-bottom: 5px;">
+                    <div>
+                        <div class="job-title">Master of Science in Informatics (Cybersecurity Focus)</div>
+                        <div class="job-company">The University of Texas Rio Grande Valley</div>
+                    </div>
+                    <div class="job-date">Expected: TBD</div>
+                </div>
+            </div>
+            <div class="job" style="margin-bottom: 0;">
+                <div class="job-header" style="margin-bottom: 5px;">
+                    <div>
+                        <div class="job-title">Bachelor of Science in Computer Science</div>
+                        <div class="job-company">The University of Texas at San Antonio</div>
+                    </div>
+                    <div class="job-date">Graduated: Dec 2023</div>
+                </div>
+                <div style="color: var(--text-muted); font-size: 0.9rem;">GPA: 3.21</div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 40px 0; font-family: monospace; color: var(--text-muted); font-size: 0.9rem;">
+            <p>Designed & Built by Jose Hernandez</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
