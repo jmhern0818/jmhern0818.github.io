@@ -66,12 +66,12 @@
         }
 
         /* --- Smoother Scroll Reveal Animations --- */
-        /* Increased the translate distance slightly and lengthened the duration for a more "floaty" feel */
+        /* Increased travel distance to 80px, lengthened duration to 1.8s, and used an ultra-smooth ease-out-quint bezier curve */
         .reveal {
             opacity: 0;
-            transform: translateY(60px); 
-            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
-                        transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+            transform: translateY(80px); 
+            transition: opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1), 
+                        transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .reveal.active {
@@ -79,10 +79,10 @@
             transform: translateY(0);
         }
 
-        /* Adjusted staggered delays to be more noticeable and elegant */
-        .delay-1 { transition-delay: 0.15s; }
-        .delay-2 { transition-delay: 0.30s; }
-        .delay-3 { transition-delay: 0.45s; }
+        /* Adjusted staggered delays to match the new, slower pace */
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
 
         /* --- Hero Section --- */
         .hero {
