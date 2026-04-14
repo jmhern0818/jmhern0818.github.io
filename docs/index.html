@@ -65,13 +65,13 @@
             padding: 80px 0;
         }
 
-        /* --- Smoother Scroll Reveal Animations --- */
-        /* Increased travel distance to 80px, lengthened duration to 1.8s, and used an ultra-smooth ease-out-quint bezier curve */
+        /* --- Ultra-Smooth Scroll Reveal Animations --- */
+        /* Increased travel distance to 100px, duration to 2.5s, with an extreme ease-out curve */
         .reveal {
             opacity: 0;
-            transform: translateY(80px); 
-            transition: opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1), 
-                        transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(100px); 
+            transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.active {
@@ -79,10 +79,11 @@
             transform: translateY(0);
         }
 
-        /* Adjusted staggered delays to match the new, slower pace */
-        .delay-1 { transition-delay: 0.2s; }
-        .delay-2 { transition-delay: 0.4s; }
-        .delay-3 { transition-delay: 0.6s; }
+        /* Much wider staggered delays to guarantee headings appear before content */
+        .delay-1 { transition-delay: 0.3s; }
+        .delay-2 { transition-delay: 0.6s; }
+        .delay-3 { transition-delay: 0.9s; }
+        .delay-4 { transition-delay: 1.2s; }
 
         /* --- Hero Section --- */
         .hero {
@@ -394,7 +395,7 @@
 </head>
 <body>
 
-    <div class="social-links reveal delay-1">
+    <div class="social-links reveal delay-2">
         <a href="https://github.com/jmhern0818" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/jmhern0818" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="mailto:jmhern0818@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -420,9 +421,11 @@
 
         <!-- Experience -->
         <section id="experience" class="section">
+            <!-- Heading has NO delay, so it appears first -->
             <h2 class="reveal"><i class="fas fa-briefcase"></i> Experience</h2>
             
-            <div class="job reveal">
+            <!-- Jobs have delays to appear AFTER the heading -->
+            <div class="job reveal delay-1">
                 <div class="job-header">
                     <div>
                         <div class="job-title">System Analyst (Program Specialist I)</div>
@@ -440,7 +443,7 @@
                 </ul>
             </div>
 
-            <div class="job reveal">
+            <div class="job reveal delay-2">
                 <div class="job-header">
                     <div>
                         <div class="job-title">Private Tutor - CS 1083</div>
@@ -456,6 +459,7 @@
 
         <!-- Projects -->
         <section id="projects" class="section">
+            <!-- Heading has NO delay -->
             <h2 class="reveal"><i class="fas fa-code-branch"></i> Technical Projects</h2>
             <div class="projects-grid">
                 
@@ -498,7 +502,7 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal delay-1">
+                <div class="project-card reveal delay-4">
                     <div class="project-header">
                         <i class="far fa-folder"></i>
                     </div>
@@ -515,6 +519,7 @@
 
         <!-- Skills & Education -->
         <section id="skills" class="section">
+            <!-- Heading has NO delay -->
             <h2 class="reveal"><i class="fas fa-terminal"></i> Skills & Education</h2>
             
             <div class="skills-container" style="margin-bottom: 40px;">
@@ -544,7 +549,7 @@
                 </div>
             </div>
 
-            <div class="job reveal">
+            <div class="job reveal delay-1">
                 <div class="job-header" style="margin-bottom: 5px;">
                     <div>
                         <div class="job-title">Master of Science in Informatics (Cybersecurity Focus)</div>
@@ -553,7 +558,7 @@
                     <div class="job-date">Expected: TBD</div>
                 </div>
             </div>
-            <div class="job reveal" style="margin-bottom: 0;">
+            <div class="job reveal delay-2" style="margin-bottom: 0;">
                 <div class="job-header" style="margin-bottom: 5px;">
                     <div>
                         <div class="job-title">Bachelor of Science in Computer Science</div>
@@ -567,7 +572,7 @@
         </section>
 
         <!-- Footer -->
-        <footer style="text-align: center; padding: 40px 0; font-family: monospace; color: var(--text-muted); font-size: 0.9rem;" class="reveal">
+        <footer style="text-align: center; padding: 40px 0; font-family: monospace; color: var(--text-muted); font-size: 0.9rem;" class="reveal delay-1">
             <p>Designed & Built by Jose Hernandez</p>
         </footer>
 
@@ -579,10 +584,10 @@
             const reveals = document.querySelectorAll('.reveal');
 
             const revealOptions = {
-                // Triggers earlier so the animation starts before it's fully in view
-                threshold: 0.05, 
-                // Adds a buffer at the bottom so it triggers sooner
-                rootMargin: "0px 0px -20px 0px" 
+                // Trigger essentially as soon as the element crosses the bottom threshold
+                threshold: 0.0, 
+                // Adjusted buffer so elements start animating while still slightly off-screen
+                rootMargin: "0px 0px -50px 0px" 
             };
 
             const revealOnScroll = new IntersectionObserver(function(entries, observer) {
