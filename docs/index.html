@@ -760,38 +760,42 @@
     </div>
 
     <script>
-        window.addEventListener("load", () => {
-            setTimeout(() => {
-                document.body.classList.add("loaded");
-            }, 100);
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            document.body.classList.add("loaded");
+        }, 100);
 
-            const groups = document.querySelectorAll(".section, footer");
+        const groups = document.querySelectorAll(".section, footer");
 
-            groups.forEach((group) => {
-                const items = group.querySelectorAll(".reveal");
-                items.forEach((item, index) => {
-                    item.style.setProperty("--delay", `${index * 90}ms`);
-                });
+        groups.forEach((group) => {
+            const items = group.querySelectorAll(".reveal");
+            items.forEach((item, index) => {
+                item.style.setProperty("--delay", `${index * 80}ms`);
             });
-
-            const revealElements = document.querySelectorAll(".reveal");
-
-            const observer = new IntersectionObserver(
-                (entries, obs) => {
-                    entries.forEach((entry) => {
-                        if (!entry.isIntersecting) return;
-                        entry.target.classList.add("active");
-                        obs.unobserve(entry.target);
-                    });
-                },
-                {
-                    threshold: 0.12,
-                    rootMargin: "0px 0px -8% 0px",
-                }
-            );
-
-            revealElements.forEach((el) => observer.observe(el));
         });
-    </script>
+
+        const sectionObserver = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+
+                    entry.target.querySelectorAll(".reveal").forEach((item) => {
+                        item.classList.add("active");
+                    });
+
+                    observer.unobserve(entry.target);
+                });
+            },
+            {
+                threshold: 0.08,
+                rootMargin: "0px 0px -15% 0px",
+            }
+        );
+
+        groups.forEach((group) => {
+            sectionObserver.observe(group);
+        });
+    });
+</script>
 </body>
 </html>
