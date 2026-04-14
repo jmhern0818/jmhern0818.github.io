@@ -30,7 +30,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden; /* Prevents horizontal scrollbar during animations */
+            overflow-x: hidden;
         }
 
         /* --- Layout & Typography --- */
@@ -65,22 +65,24 @@
             padding: 80px 0;
         }
 
-        /* --- Scroll Reveal Animations --- */
+        /* --- Smoother Scroll Reveal Animations --- */
+        /* Increased the translate distance slightly and lengthened the duration for a more "floaty" feel */
         .reveal {
             opacity: 0;
-            transform: translateY(40px); /* Starts 40px lower */
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); /* Smooth Apple-like easing */
+            transform: translateY(60px); 
+            transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
+                        transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .reveal.active {
             opacity: 1;
-            transform: translateY(0); /* Glides into final position */
+            transform: translateY(0);
         }
 
-        /* Staggered delays for items in a row/grid */
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
+        /* Adjusted staggered delays to be more noticeable and elegant */
+        .delay-1 { transition-delay: 0.15s; }
+        .delay-2 { transition-delay: 0.30s; }
+        .delay-3 { transition-delay: 0.45s; }
 
         /* --- Hero Section --- */
         .hero {
@@ -392,7 +394,7 @@
 </head>
 <body>
 
-    <div class="social-links reveal">
+    <div class="social-links reveal delay-1">
         <a href="https://github.com/jmhern0818" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/jmhern0818" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="mailto:jmhern0818@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -401,8 +403,8 @@
     <div class="container">
         <!-- Hero -->
         <section class="hero">
-            <div class="hero-content reveal">
-                <div class="hero-text">
+            <div class="hero-content">
+                <div class="hero-text reveal">
                     <div class="hero-pre">Hi, my name is</div>
                     <h1>Jose Hernandez.<span>I build and manage reliable systems.</span></h1>
                     <p>I'm a System Analyst and Application Software Engineer specializing in mission-critical infrastructure, database management, and scalable applications. Currently focused on EHR systems and ensuring continuous uptime in highly regulated environments.</p>
@@ -412,7 +414,7 @@
                     </div>
                 </div>
                 <!-- Profile Image Placeholder -->
-                <img src="profile.jpg" alt="Jose Hernandez" class="hero-image" onerror="this.src='https://via.placeholder.com/250/1e293b/38bdf8?text=Your+Photo'">
+                <img src="profile.jpg" alt="Jose Hernandez" class="hero-image reveal delay-1" onerror="this.src='https://via.placeholder.com/250/1e293b/38bdf8?text=Your+Photo'">
             </div>
         </section>
 
@@ -577,8 +579,10 @@
             const reveals = document.querySelectorAll('.reveal');
 
             const revealOptions = {
-                threshold: 0.1, // Triggers when 10% of the element is visible
-                rootMargin: "0px 0px -50px 0px" // Triggers slightly before the bottom of the viewport
+                // Triggers earlier so the animation starts before it's fully in view
+                threshold: 0.05, 
+                // Adds a buffer at the bottom so it triggers sooner
+                rootMargin: "0px 0px -20px 0px" 
             };
 
             const revealOnScroll = new IntersectionObserver(function(entries, observer) {
@@ -587,7 +591,7 @@
                         return;
                     } else {
                         entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // Stops animating after it appears once
+                        observer.unobserve(entry.target); 
                     }
                 });
             }, revealOptions);
