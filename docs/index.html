@@ -68,10 +68,10 @@
         /* --- Dynamic Scroll Reveal Animations --- */
         .reveal {
             opacity: 0;
-            transform: translateY(40px); /* Tightened up for a cleaner snap */
-            /* Removed hardcoded delays. Easing is a sharp, snappy Apple-style curve */
-            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px);
+            /* Increased to 2.0s duration for a highly cinematic, slow, and luxurious float */
+            transition: opacity 2.0s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 2.0s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.active {
@@ -408,8 +408,8 @@
                         <a href="Software_Engineer_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
                     </div>
                 </div>
-                <!-- Profile Image Placeholder -->
-                <img src="/docs/profile.jpg" alt="Jose Hernandez" class="hero-image reveal" onerror="this.src='https://via.placeholder.com/250/1e293b/38bdf8?text=Your+Photo'">
+                <!-- Profile Image: explicitly pointing to profile.jpg assuming standard GitHub Pages doc root -->
+                <img src="profile.jpg" alt="Jose Hernandez" class="hero-image reveal" onerror="this.src='https://via.placeholder.com/250/1e293b/38bdf8?text=Your+Photo'">
             </div>
         </section>
 
@@ -584,8 +584,10 @@
 
                 // Dynamically apply a cascading delay ONLY to items appearing at the same time
                 intersectingEntries.forEach((entry, index) => {
-                    // 0.15s gap between elements appearing in the same batch
-                    entry.target.style.transitionDelay = `${index * 0.15}s`;
+                    // INCREASED DELAY GAP: Now 0.4s between elements in the same batch.
+                    // This guarantees headers will have plenty of time to animate and lead 
+                    // before the content boxes underneath them begin to appear.
+                    entry.target.style.transitionDelay = `${index * 0.4}s`;
                     
                     // Small timeout ensures the delay rule is registered before the animation class fires
                     setTimeout(() => {
