@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111f" />
     <title>Jose Manuel Hernandez | Software Engineer</title>
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -26,6 +27,7 @@
             --radius-md: 18px;
             --ease: cubic-bezier(0.22, 1, 0.36, 1);
             --max-width: 1120px;
+            --nav-height: 78px;
         }
 
         * {
@@ -44,7 +46,7 @@
             color: var(--text);
             background:
                 radial-gradient(circle at 12% 10%, rgba(86, 201, 251, 0.14), transparent 24%),
-                radial-gradient(circle at 88% 14%, rgba(142, 220, 255, 0.1), transparent 22%),
+                radial-gradient(circle at 88% 14%, rgba(142, 220, 255, 0.10), transparent 22%),
                 radial-gradient(circle at 50% 82%, rgba(86, 201, 251, 0.07), transparent 32%),
                 linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
             line-height: 1.6;
@@ -54,6 +56,28 @@
 
         a {
             color: inherit;
+        }
+
+        ::selection {
+            background: rgba(86, 201, 251, 0.25);
+            color: #ffffff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(142, 220, 255, 0.22);
+            border-radius: 999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(142, 220, 255, 0.32);
         }
 
         .container {
@@ -120,7 +144,6 @@
             opacity: 0.45;
         }
 
-        /* Clean base glass, no permanent center spotlight */
         .liquid-glass {
             position: relative;
             overflow: hidden;
@@ -163,16 +186,13 @@
             opacity: 0.75;
         }
 
-        /* Hover-only spotlight */
         .glass-spotlight {
             position: absolute;
             inset: 0;
             border-radius: inherit;
             pointer-events: none;
             opacity: 0;
-            transition:
-                opacity 260ms ease,
-                background-position 120ms ease;
+            transition: opacity 260ms ease;
             background:
                 radial-gradient(
                     320px circle at var(--mx, 50%) var(--my, 50%),
@@ -208,7 +228,6 @@
                 );
         }
 
-        /* toned-down sweep */
         .light-sweep {
             position: absolute;
             inset: -30%;
@@ -292,13 +311,20 @@
             transition:
                 color 220ms ease,
                 background-color 220ms ease,
-                transform 220ms ease;
+                transform 220ms ease,
+                box-shadow 220ms ease;
         }
 
         .nav-links a:hover {
             color: var(--text);
             background: rgba(255, 255, 255, 0.06);
             transform: translateY(-1px);
+        }
+
+        .nav-links a.active {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.085);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
         }
 
         .social-links {
@@ -591,6 +617,7 @@
 
         .section {
             padding: 92px 0;
+            scroll-margin-top: 110px;
         }
 
         .section-header {
@@ -712,8 +739,12 @@
         .job li {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: var(--muted);
+        }
+
+        .job li:last-child {
+            margin-bottom: 0;
         }
 
         .job li::before {
@@ -731,7 +762,7 @@
 
         .job strong {
             color: var(--text);
-            font-weight: 600;
+            font-weight: 650;
         }
 
         .projects-grid {
@@ -950,6 +981,7 @@
 
             .nav-links {
                 gap: 4px;
+                justify-content: center;
             }
         }
 
@@ -1025,6 +1057,7 @@
             <span class="light-sweep" aria-hidden="true"></span>
 
             <a href="#" class="brand">Jose Manuel Hernandez</a>
+
             <div class="nav-links">
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
@@ -1082,7 +1115,7 @@
                     </div>
 
                     <div class="hero-meta">
-                        <div class="meta-pill">Texas HHSC</div>
+                        <div class="meta-pill">Rio Grande State Center</div>
                         <div class="meta-pill">Java • C# • Python • SQL</div>
                         <div class="meta-pill">AWS • Linux • Systems</div>
                     </div>
@@ -1108,16 +1141,16 @@
                                 <div class="value">System Analyst</div>
                             </div>
                             <div class="mini-stat">
-                                <div class="label">Focus</div>
-                                <div class="value">Reliable Software Systems</div>
+                                <div class="label">Campus Scope</div>
+                                <div class="value">3 Major Program Areas</div>
+                            </div>
+                            <div class="mini-stat">
+                                <div class="label">Users Supported</div>
+                                <div class="value">100+ End Users</div>
                             </div>
                             <div class="mini-stat">
                                 <div class="label">Environment</div>
                                 <div class="value">Healthcare / EHR / Infra</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="label">Based In</div>
-                                <div class="value">Texas</div>
                             </div>
                         </div>
                     </div>
@@ -1144,12 +1177,17 @@
                         <div class="job-date">Dec 2023 - Present</div>
                     </div>
                     <ul>
-                        <li><strong>EHR Administration &amp; Technical Lead:</strong> Manage, maintain, and support mission-critical Electronic Health Record systems, primarily Practice Partner and MyAvatar, ensuring continuous uptime for clinical and billing workflows.</li>
-                        <li><strong>Database Management &amp; Automated Reporting:</strong> Administer relational databases and configure ODBC connections to design and automate reporting pipelines using SQL and Crystal Reports.</li>
-                        <li><strong>Vendor &amp; Infrastructure Coordination:</strong> Collaborate with software vendors, Data Center Services, and IT Operations to resolve complex issues, deploy patches, and manage remote service licensing.</li>
-                        <li><strong>Network &amp; Hardware Support:</strong> Troubleshoot WAN/LAN, Wi-Fi, workstations, VoIP phones, and surveillance systems across multiple program components.</li>
-                        <li><strong>Compliance &amp; Data Security:</strong> Manage role-based access and support workflows aligned with Joint Commission, CMS, and HHS standards.</li>
-                        <li><strong>User Training &amp; Incident Response:</strong> Train medical staff on EHR modules and perform root-cause analysis for technical failures.</li>
+                        <li><strong>Administered</strong> mission-critical EHR platforms, including <strong>Practice Partner</strong> and <strong>MyAvatar</strong>, for <strong>100+ end users</strong> across <strong>3 major program areas</strong> at the Rio Grande State Center—Outpatient Clinic, Mental Hospital, and SSLC—supporting reliable clinical and billing operations.</li>
+
+                        <li><strong>Built and maintained</strong> reporting workflows by managing relational databases, configuring <strong>ODBC</strong> connections, and developing <strong>SQL / Crystal Reports</strong> solutions, improving data access for staff across <strong>3 site-wide program areas</strong> and reducing manual reporting effort.</li>
+
+                        <li><strong>Coordinated</strong> with software vendors, Data Center Services, and IT Operations to troubleshoot <strong>application, licensing, and infrastructure</strong> issues, helping restore service more quickly for <strong>100+ users</strong> across a multi-program healthcare campus.</li>
+
+                        <li><strong>Supported</strong> <strong>WAN/LAN connectivity, Wi-Fi, workstations, VoIP phones, and surveillance systems</strong> across the Outpatient Clinic, Mental Hospital, and SSLC, improving day-to-day technical reliability for <strong>site-wide clinical and administrative staff</strong>.</li>
+
+                        <li><strong>Managed</strong> <strong>role-based access, user provisioning, and permissions</strong> for <strong>100+ end users</strong> in a regulated healthcare environment, strengthening data security and supporting compliance with <strong>Joint Commission, CMS, and HHS</strong> standards.</li>
+
+                        <li><strong>Trained</strong> clinical and administrative staff on <strong>EHR modules, templates, and Prescriber Order Entry</strong> workflows, improving adoption across <strong>3 major program areas</strong> and reducing repeat support needs for site users.</li>
                     </ul>
                 </article>
 
@@ -1162,7 +1200,7 @@
                         <div class="job-date">Aug 2018 - May 2019</div>
                     </div>
                     <ul>
-                        <li><strong>Java Mentorship:</strong> Assisted peers with object-oriented programming fundamentals and core Java problem solving.</li>
+                        <li><strong>Tutored</strong> undergraduate students in <strong>object-oriented programming and core Java concepts</strong> through one-on-one support sessions, strengthening problem-solving skills and improving understanding of <strong>CS 1083 coursework</strong>.</li>
                     </ul>
                 </article>
             </div>
@@ -1314,6 +1352,9 @@
             }, 100);
 
             const groups = document.querySelectorAll(".section, footer");
+            const revealElements = document.querySelectorAll(".reveal");
+            const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+            const sections = document.querySelectorAll("section[id]");
 
             groups.forEach((group) => {
                 const items = group.querySelectorAll(".reveal");
@@ -1322,59 +1363,84 @@
                 });
             });
 
-            const sectionObserver = new IntersectionObserver(
-                (entries, observer) => {
-                    entries.forEach((entry) => {
-                        if (!entry.isIntersecting) return;
+            if ("IntersectionObserver" in window) {
+                const sectionObserver = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (!entry.isIntersecting) return;
 
-                        entry.target.querySelectorAll(".reveal").forEach((item) => {
-                            item.classList.add("active");
+                            entry.target.querySelectorAll(".reveal").forEach((item) => {
+                                item.classList.add("active");
+                            });
+
+                            observer.unobserve(entry.target);
                         });
+                    },
+                    {
+                        threshold: 0.08,
+                        rootMargin: "0px 0px -15% 0px",
+                    }
+                );
 
-                        observer.unobserve(entry.target);
-                    });
-                },
-                {
-                    threshold: 0.08,
-                    rootMargin: "0px 0px -15% 0px",
-                }
-            );
+                groups.forEach((group) => {
+                    sectionObserver.observe(group);
+                });
+            } else {
+                revealElements.forEach((item) => item.classList.add("active"));
+            }
 
-            groups.forEach((group) => {
-                sectionObserver.observe(group);
-            });
+            function updateActiveNav() {
+                let currentId = "";
 
-            const interactiveGlass = document.querySelectorAll(".interactive-glass");
+                sections.forEach((section) => {
+                    const top = section.offsetTop - 140;
+                    const bottom = top + section.offsetHeight;
 
-            interactiveGlass.forEach((element) => {
-                const setCenter = () => {
-                    element.style.setProperty("--mx", "50%");
-                    element.style.setProperty("--my", "50%");
-                };
-
-                setCenter();
-
-                element.addEventListener("pointerenter", (event) => {
-                    const rect = element.getBoundingClientRect();
-                    const x = ((event.clientX - rect.left) / rect.width) * 100;
-                    const y = ((event.clientY - rect.top) / rect.height) * 100;
-                    element.style.setProperty("--mx", `${x}%`);
-                    element.style.setProperty("--my", `${y}%`);
+                    if (window.scrollY >= top && window.scrollY < bottom) {
+                        currentId = section.id;
+                    }
                 });
 
-                element.addEventListener("pointermove", (event) => {
-                    const rect = element.getBoundingClientRect();
-                    const x = ((event.clientX - rect.left) / rect.width) * 100;
-                    const y = ((event.clientY - rect.top) / rect.height) * 100;
-
-                    element.style.setProperty("--mx", `${Math.max(0, Math.min(100, x))}%`);
-                    element.style.setProperty("--my", `${Math.max(0, Math.min(100, y))}%`);
+                navLinks.forEach((link) => {
+                    link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
                 });
+            }
 
-                element.addEventListener("pointerleave", () => {
+            updateActiveNav();
+            window.addEventListener("scroll", updateActiveNav, { passive: true });
+            window.addEventListener("resize", updateActiveNav);
+
+            if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                const interactiveGlass = document.querySelectorAll(".interactive-glass");
+
+                interactiveGlass.forEach((element) => {
+                    const setCenter = () => {
+                        element.style.setProperty("--mx", "50%");
+                        element.style.setProperty("--my", "50%");
+                    };
+
                     setCenter();
+
+                    element.addEventListener("pointerenter", (event) => {
+                        const rect = element.getBoundingClientRect();
+                        const x = ((event.clientX - rect.left) / rect.width) * 100;
+                        const y = ((event.clientY - rect.top) / rect.height) * 100;
+                        element.style.setProperty("--mx", `${x}%`);
+                        element.style.setProperty("--my", `${y}%`);
+                    });
+
+                    element.addEventListener("pointermove", (event) => {
+                        const rect = element.getBoundingClientRect();
+                        const x = ((event.clientX - rect.left) / rect.width) * 100;
+                        const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+                        element.style.setProperty("--mx", `${Math.max(0, Math.min(100, x))}%`);
+                        element.style.setProperty("--my", `${Math.max(0, Math.min(100, y))}%`);
+                    });
+
+                    element.addEventListener("pointerleave", setCenter);
                 });
-            });
+            }
         });
     </script>
 </body>
